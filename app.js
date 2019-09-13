@@ -22,7 +22,7 @@ const algoliaSearch = () => {
         data.hits.forEach((item) => {
             console.log(item.locale_names.default[0]);
             autocompleteList.insertAdjacentHTML('beforeend', `
-            <a class="dropdown-item" href="#">${item.locale_names.default[0]}</a>
+            <a class="dropdown-item" href="#">${item.locale_names.default[0]} ${item._geoloc.lat} ${item._geoloc.lng}</a>
             `)
         });
     })
